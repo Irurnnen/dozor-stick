@@ -7,7 +7,7 @@
 
 /*====== WebSocket настройки ======*/
 #define host "192.168.4.1"  // IP внешней esp32
-const uint16_t port = 81;       // порт WebSocket-сервера
+#define port 81       // порт WebSocket-сервера
 
 WebSocketsClient webSocket;
 
