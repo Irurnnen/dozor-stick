@@ -2,12 +2,12 @@
 #include <WebSocketsClient.h>
 
 /*====== WiFi настройки ======*/
-#define ssid "TEST"    // имя WiFi-сети, поднятой внешней ESP32
-#define password NULL  // пароль, если точка без пароля — оставь пустым
+#define ssid "DOZOR"                 // имя WiFi-сети, поднятой внешней ESP32
+#define password "liQXsLNAJ8nd9V4l"  // пароль, если точка без пароля — оставь пустым
 
 /*====== WebSocket настройки ======*/
 #define host "192.168.4.1"  // IP внешней esp32
-#define port 81       // порт WebSocket-сервера
+#define port 81             // порт WebSocket-сервера
 
 WebSocketsClient webSocket;
 
@@ -43,15 +43,15 @@ void setup() {
         break;
 
       case WStype_TEXT:
-        Serial.print("[WebSocket] Message received: ");
-        Serial.println((char*)payload);
+        // Serial.print("[WebSocket] Message received: ");
+        Serial.println((char *)payload);
         break;
 
       case WStype_DISCONNECTED:
         Serial.println("[WebSocket] disconnected!");
         digitalWrite(LED_PIN, LOW);
         break;
-    }
+      }
   });
   webSocket.setReconnectInterval(2000);  // каждые 2 секунд пытаться переподключиться
 
